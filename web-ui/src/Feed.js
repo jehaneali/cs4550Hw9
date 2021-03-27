@@ -10,8 +10,10 @@ function Event({ event }) {
         <Col>
             <Card>
                 <Card.Text>
-                    Posted by {event.user.name} <br/>
-                    {event.title}
+                    <h2>{event.title}</h2> 
+                    Hosted by: {event.user.name} <br/>
+                    When: {event.date} <br/>
+                    Description: {event.description}
                 </Card.Text>
         </Card>
         </Col>
@@ -24,7 +26,7 @@ function Feed({events}) {
     ));
     return (
         <div>
-            <h2>Feed</h2>
+            <h2>Event Feed</h2>
             <Row>{cards}</Row>
         </div>
     );

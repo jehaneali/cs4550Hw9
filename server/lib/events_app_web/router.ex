@@ -27,6 +27,7 @@ defmodule EventsAppWeb.Router do
      resources "/events", EventController, except: [:new, :edit]
      resources "/invites", InviteController, except: [:new, :edit]
      resources "/comments", CommentController, except: [:new, :edit]
+     resources "/session", SessionController, only: [:create]
    end
 
   # Enables LiveDashboard only for development

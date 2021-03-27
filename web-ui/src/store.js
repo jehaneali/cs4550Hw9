@@ -52,7 +52,7 @@ function root_reducer(state, action) {
     }
     */
     let redu = combineReducers(
-        { users, user_form, events, session }
+        {users, user_form, events, session}
     );
 
     let state1 = redu(state, action);
