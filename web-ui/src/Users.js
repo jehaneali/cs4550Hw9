@@ -41,6 +41,12 @@ export default function Users({users}) {
     let rows = users.map((user) => (
         <tr key={user.id}>
             <td>{user.name}</td>
+            <td> 
+                <Button variant="secondary"
+                onClick={() => setUser(user)}>
+                    Edit
+                    </Button>
+            </td>
             <td>Actions</td>
         </tr>
     ))
@@ -49,7 +55,12 @@ export default function Users({users}) {
         <div>
             <Row>
                 <Col>
-                <h2>List Users</h2>
+                <h2>List Users</h2> 
+                <p>
+                    <Button variant="secondary"
+                onClick={() => setUser({})}> New User </Button>
+
+                </p>
                 <table className = "table table-striped">
                     <thead>
                         <tr>
