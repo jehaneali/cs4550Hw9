@@ -1,7 +1,9 @@
-import logo from './logo.svg';
-import './App.css';
+import './App.scss';
+import Users from "./Users";
+import {Row, Col, Form, Button} from 'react-bootstrap';
 
 import {useState, useEffect} from 'react';
+import { Container } from 'react-bootstrap';
 
 async function fetchUsers() {
   let text = await fetch("http://localhost:4000/api/v1/users", {});
@@ -20,12 +22,10 @@ function App() {
   }, [users.length]);
 
   return (
-    <div>
-      <ul>
-        {users.map((uu) => (<li key={uu.id}>{uu.name}</li>))}
-      </ul>
-    </div>
-  )
+    <Container>
+      <Users users={users} />
+    </Container>
+  );
 }
 
 export default App;
