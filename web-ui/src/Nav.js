@@ -30,11 +30,15 @@ function LoginForm() {
     );
 }
 
-function SessionInfo({ session }) {
+let SessionInfo = connect()(({session, dispatch}) => {
+    function logout() {
+        dispatch({type: 'session/clear'});
+    }
     return (
-        <p>Logged in as {session.name}</p>
+        <p>Logged in as {session.name} &nbsp;
+        <Button onClick={logout}>Logout</Button></p>
     );
-}
+});
 
 function LOI({ session }) {
     if (session) {
