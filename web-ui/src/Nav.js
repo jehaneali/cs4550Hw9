@@ -3,11 +3,16 @@ import { NavLink } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 function LoginForm() {
+    function on_submit(ev) {
+        ev.preventDefault();
+        console.log(ev);
+    } 
+
     return (
-        <Form inline>
-            <Form.Control type="text" />
-            <Form.Control type="password" />
-            <Button variant="primary">Login</Button>
+        <Form onSubmit={on_submit} inline>
+            <Form.Control name="name" type="text" />
+            <Form.Control name="password" type="password" />
+            <Button variant="primary" type ="submit">Login</Button>
         </Form>
     );
 }
@@ -17,17 +22,6 @@ function SessionInfo({session}) {
         <p>Logged in as {session.name}</p>
     );
 }
-
-// const LoginOrInfo = connect(
-//     ({session}) => ({session})
-//     (({session}) => {
-//         if (session) {
-//             return<SessionInfo session={session} />;
-//         }
-//         else {
-//             return <LoginForm />;
-//         }
-//     }));
 
 function LOI({session}) {
     if (session) {
