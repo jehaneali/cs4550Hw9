@@ -14,6 +14,7 @@ mix compile
 export SECRET_KEY_BASE=E8L3Bzz6N+p5bi3wU8u5YILQT+V+Jw0ZaJyPDTwrK4ir9pAZ455QDFbFHR9f1end
 export DATABASE_URL=ecto://eventsspa:ZoaThui4chie@localhost/spa_events_app_prod
 # todo maybe change that 
+mix ecto.create
 mix ecto.migrate
 # (cd assets && npm install)
 (cd assets && webpack --mode production)
