@@ -3,7 +3,7 @@ defmodule EventsApp.MixProject do
 
   def project do
     [
-      app: :events_app,
+      app: :events_app_spa,
       version: "0.1.0",
       elixir: "~> 1.7",
       elixirc_paths: elixirc_paths(Mix.env()),

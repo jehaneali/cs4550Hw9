@@ -7,14 +7,14 @@
 # General application configuration
 use Mix.Config
 
-config :events_app,
+config :events_app_spa,
   ecto_repos: [EventsApp.Repo]
 
-config :events_app,
+config :events_app_spa,
   mix_env: "#{Mix.env()}"
 
 # Configures the endpoint
-config :events_app, EventsAppWeb.Endpoint,
+config :events_app_spa, EventsAppWeb.Endpoint,
   url: [host: "localhost"],
   secret_key_base: "k0dQs/ogrHEpnwZfQUFXT0UN2bB5oS4iNAv2NelBDepYacNCs9O86gNRjCbMcCHq",
   render_errors: [view: EventsAppWeb.ErrorView, accepts: ~w(html json), layout: false],
